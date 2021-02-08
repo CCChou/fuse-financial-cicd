@@ -10,7 +10,7 @@
   <properties>
     <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
     <fabric8.version>2.2.170.redhat-000010</fabric8.version>
-    <fabric8.maven.plugin.version>3.1.80.redhat-000010</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>4.3.0.fuse-780012-redhat-00001</fabric8.maven.plugin.version>
     <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
     <run.profiles>dev</run.profiles>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -163,6 +163,9 @@
         <groupId>io.fabric8</groupId>
         <artifactId>fabric8-maven-plugin</artifactId>
         <version>${fabric8.maven.plugin.version}</version>
+        <configuration>
+          <registry>registry.access.redhat.com</registry>
+        </configuration>
         <executions>
           <execution>
             <goals>
