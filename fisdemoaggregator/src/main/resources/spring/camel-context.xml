@@ -60,7 +60,7 @@
                         <hystrixConfiguration
                             circuitBreakerSleepWindowInMilliseconds="10000" executionTimeoutInMilliseconds="5000"/>
                         <recipientList id="_recipientList1">
-                            <simple>http://fisblockchain-service/demos/bitcoinaccount/balance/${header.acctid}?bridgeEndpoint=true</simple>
+                            <simple>http://fisblockchain-service:8080/demos/bitcoinaccount/balance/${header.acctid}?bridgeEndpoint=true</simple>
                         </recipientList>
                         <onFallback id="_onFallback1">
                             <to id="_handelerro01" uri="direct:doNoresponse"/>
@@ -78,7 +78,7 @@
                         <hystrixConfiguration
                             circuitBreakerSleepWindowInMilliseconds="10000" executionTimeoutInMilliseconds="5000"/>
                         <recipientList id="_recipientList2">
-                            <simple>http://fisaccount-service/demos/account/profile/${header.acctid}?bridgeEndpoint=true</simple>
+                            <simple>http://fisaccount-service:8080/demos/account/profile/${header.acctid}?bridgeEndpoint=true</simple>
                         </recipientList>
                         <convertBodyTo id="_convertBodyTo3" type="java.lang.String"/>
                         <unmarshal id="_unmarshal1">
@@ -109,7 +109,7 @@
                         <hystrixConfiguration
                             circuitBreakerSleepWindowInMilliseconds="10000" executionTimeoutInMilliseconds="5000"/>
                         <recipientList id="_recipientList3">
-                            <simple>http://fisblockchain-service/demos/bitcoinaccount/transfer/${header.acctid}/${header.amt}/${header.recptid}?bridgeEndpoint=true</simple>
+                            <simple>http://fisblockchain-service:8080/demos/bitcoinaccount/transfer/${header.acctid}/${header.amt}/${header.recptid}?bridgeEndpoint=true</simple>
                         </recipientList>
                         <convertBodyTo id="_convertBodyTo2" type="java.lang.String"/>
                         <log id="_log7" message="${body}"/>
@@ -124,7 +124,7 @@
                         <hystrixConfiguration
                             circuitBreakerSleepWindowInMilliseconds="10000" executionTimeoutInMilliseconds="5000"/>
                         <recipientList id="_recipientList4">
-                            <simple>http://fisaccount-service/demos/account/transfer/${header.acctid}/${header.amt}/${header.recptid}?bridgeEndpoint=true</simple>
+                            <simple>http://fisaccount-service:8080/demos/account/transfer/${header.acctid}/${header.amt}/${header.recptid}?bridgeEndpoint=true</simple>
                         </recipientList>
                         <convertBodyTo id="_convertBodyTo4" type="java.lang.String"/>
                         <unmarshal id="_unmarshal4">
@@ -158,7 +158,7 @@
                         <hystrixConfiguration
                             circuitBreakerSleepWindowInMilliseconds="10000" executionTimeoutInMilliseconds="5000"/>
                         <recipientList id="_recipientList5">
-                            <simple>http://fisaccount-service/demos/account/profile/${header.acctid}?bridgeEndpoint=true</simple>
+                            <simple>http://fisaccount-service:8080/demos/account/profile/${header.acctid}?bridgeEndpoint=true</simple>
                         </recipientList>
                         <convertBodyTo id="_convertBodyTo5" type="java.lang.String"/>
                         <onFallback id="_onFallback5">
